@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ filename }}</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 40px;
+      background: #f9f9f9;
+      text-align: center;
+    }
+    img {
+      max-width: 50%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+    .download-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .download-btn:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <h2>{{ filename }}</h2>
+  <img src="{{ image_url }}" alt="{{ filename }}">
+  <br>
+  <a class="download-btn" href="{{ url_for('download_image', filename=filename) }}">Download</a>
+</body>
+</html>
